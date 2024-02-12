@@ -31,12 +31,12 @@ def extract_coords(particles):
     data = {
         'x' : context.nparray_from_context_array(particles.x),
         'px' : context.nparray_from_context_array(particles.px),
-        'y_init' : context.nparray_from_context_array(particles.y),
-        'py_init' : context.nparray_from_context_array(particles.py),
-        'zeta_init' : context.nparray_from_context_array(particles.zeta),
-        'pzeta_init' : context.nparray_from_context_array(particles.pzeta),
-        'at_turn_init' : context.nparray_from_context_array(particles.at_turn),
-        'id_init' : context.nparray_from_context_array(particles.particle_id),
-        'state_init' : context.nparray_from_context_array(particles.state),
+        'y' : context.nparray_from_context_array(particles.y),
+        'py' : context.nparray_from_context_array(particles.py),
+        'zeta' : context.nparray_from_context_array(particles.zeta),
+        'pzeta' : context.nparray_from_context_array(particles.pzeta),
+        'at_turn' : context.nparray_from_context_array(particles.at_turn),
+        'id' : context.nparray_from_context_array(particles.particle_id),
+        'state' : context.nparray_from_context_array(particles.state),
     }
     return data
