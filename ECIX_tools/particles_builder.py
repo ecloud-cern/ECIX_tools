@@ -4,8 +4,8 @@ def polar_grid_particles(line, pzeta=0, zeta=0, sigma0=0, sigma=7, num_r=216, nu
 
     import xpart as xp
 
-    r = np.linspace(sigma0, sigma, num_r+1)[1:]
-    theta = np.linspace(0,np.pi/2, num_theta+1, endpoint = True)[1:]
+    r = np.linspace(sigma0, sigma, num_r)
+    theta = np.linspace(0,np.pi/2, num_theta+2, endpoint = True)[1:-1]
 
     rr, tcos= np.meshgrid(r, np.cos(theta))
     rr, tsin = np.meshgrid(r, np.sin(theta))
@@ -28,15 +28,16 @@ def polar_grid_particles(line, pzeta=0, zeta=0, sigma0=0, sigma=7, num_r=216, nu
 def extract_coords(particles):
     context = particles._context
     
+    particles_copy = particles.copy()
     data = {
-        'x' : context.nparray_from_context_array(particles.x),
-        'px' : context.nparray_from_context_array(particles.px),
-        'y' : context.nparray_from_context_array(particles.y),
-        'py' : context.nparray_from_context_array(particles.py),
-        'zeta' : context.nparray_from_context_array(particles.zeta),
-        'pzeta' : context.nparray_from_context_array(particles.pzeta),
-        'at_turn' : context.nparray_from_context_array(particles.at_turn),
-        'id' : context.nparray_from_context_array(particles.particle_id),
-        'state' : context.nparray_from_context_array(particles.state),
+        'x' : context.nparray_from_context_array(particles_copy.x),
+        'px' : context.nparray_from_context_array(particles_copy.px),
+        'y' : context.nparray_from_context_array(particles_copy.y),
+        'py' : context.nparray_from_context_array(particles_copy.py),
+        'zeta' : context.nparray_from_context_array(particles_copy.zeta),
+        'pzeta' : context.nparray_from_context_array(particles_copy.pzeta),
+        'at_turn' : context.nparray_from_context_array(particles_copy.at_turn),
+        'id' : context.nparray_from_context_array(particles_copy.particle_id),
+        'state' : context.nparray_from_context_array(particles_copy.state),
     }
     return data

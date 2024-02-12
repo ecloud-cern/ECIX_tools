@@ -32,7 +32,8 @@ def collimator_setup(line, number_of_sigmas=5.7, reference_norm_emit=3.5e-6, ver
     sby = {}
     xco = {}
     yco = {}
-    deg3 = 126.91 
+    deg3 = 127.5
+    #deg3 = 126.91 
     rot3 = deg3
     rad3 = deg3*np.pi/180.
     for i in range(len(twiss["name"])):
