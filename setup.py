@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='ECIX_tools',
-    version="1.0",
+    version="2.0",
     description='Tools for e-cloud simulations in xsuite',
     long_description='Tools for e-cloud simulations in xsuite',
     author='K. Paraschou',
