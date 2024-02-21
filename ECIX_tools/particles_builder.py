@@ -1,6 +1,8 @@
 import numpy as np
 
-def polar_grid_particles(line, pzeta=0, zeta=0, sigma0=0, sigma=7, num_r=216, num_theta=128, theta_x=0, theta_y=0, ref_emitt=2.5e-6):
+def polar_grid_particles(line, pzeta=0, zeta=0, sigma0=0, sigma=7,
+                         num_r=216, num_theta=128, theta_x=0, theta_y=0,
+                         ref_emitt=2.5e-6, steps_r_matrix=None):
 
     import xpart as xp
 
@@ -21,7 +23,8 @@ def polar_grid_particles(line, pzeta=0, zeta=0, sigma0=0, sigma=7, num_r=216, nu
     particles = xp.build_particles(line=line, x_norm=x_norm, y_norm=y_norm, 
                                    px_norm=px_norm, py_norm=py_norm,
                                    zeta=zeta, pzeta=pzeta,
-                                   nemitt_x=ref_emitt, nemitt_y=ref_emitt)
+                                   nemitt_x=ref_emitt, nemitt_y=ref_emitt,
+                                   steps_r_matrix=steps_r_matrix)
 
     return particles, Ax_norm, Ay_norm
 
